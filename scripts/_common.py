@@ -19,7 +19,10 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Tuple, Union, cast
 
-import hydra
+# import hydra
+# from hydra.utils import instantiate
+# from omegaconf import DictConfig, OmegaConf
+
 import lightning as L
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -28,8 +31,6 @@ import pandas as pd
 import torch
 import torch.func
 import torch.nn.functional as F
-from hydra.utils import instantiate
-from omegaconf import DictConfig, OmegaConf
 from rich.progress import Progress, track
 from torch import Tensor, nn
 from tqdm.autonotebook import tqdm
