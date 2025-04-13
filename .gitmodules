@@ -5,3 +5,6 @@
 	path = references/pareto-hypernetworks
 	url = https://github.com/AvivNavon/pareto-hypernetworks.git
 
+[submodule "fusionlib"]
+	path = fusionlib
+	url = git@github.com:tanganke/fusionlib.git

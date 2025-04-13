@@ -1,0 +1,6 @@
+lightning
+datasets
+rich
+matplotlib
+cvxopt
+cvxpy

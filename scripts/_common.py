@@ -19,9 +19,9 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Tuple, Union, cast
 
-# import hydra
-# from hydra.utils import instantiate
-# from omegaconf import DictConfig, OmegaConf
+import hydra
+from hydra.utils import instantiate
+from omegaconf import DictConfig, OmegaConf
 
 import lightning as L
 import matplotlib as mpl
