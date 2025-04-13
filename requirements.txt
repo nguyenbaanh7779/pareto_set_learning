@@ -4,4 +4,3 @@ rich
 matplotlib
 cvxopt
 cvxpy
-pytorch
