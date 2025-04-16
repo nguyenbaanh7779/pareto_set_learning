@@ -552,8 +552,6 @@ class BERTParetoMoEProgram(ABC):
                     strict=False,
                 )
 
-                self.fabric.log()
-
                 losses.append(outputs.loss)
 
             loss = self.compute_loss(backbone, ray, losses)
@@ -581,14 +579,14 @@ class BERTParetoMoEProgram(ABC):
             ]), 2)
             self.fabric.log("grad_norm", total_grad_norm.item(), step=step_idx)
 
-            # Log L2 distance to each expert
-            def l2_distance(model1, model2):
-                return sum(torch.norm(p1 - p2).item()
-                        for p1, p2 in zip(model1.parameters(), model2.parameters()))
+            # # Log L2 distance to each expert
+            # def l2_distance(model1, model2):
+            #     return sum(torch.norm(p1 - p2).item()
+            #             for p1, p2 in zip(model1.parameters(), model2.parameters()))
 
-            for task, expert in self.finetuned_backbone.items():
-                dist = l2_distance(backbone, expert)
-                self.fabric.log(f"distance_to_{task}", dist, step=step_idx)
+            # for task, expert in self.finetuned_backbone.items():
+            #     dist = l2_distance(backbone, expert)
+            #     self.fabric.log(f"distance_to_{task}", dist, step=step_idx)
 
             if step_idx % cfg.save_interval == 0:
                 (self.result_dir / "checkpoints").mkdir(exist_ok=True, parents=True)
